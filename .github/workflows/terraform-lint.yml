@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   pre-commit:
-    runs-on: ubuntu-latest
+    runs-on: ${{ vars.LINUX_RUNNER || 'beast' }}
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4

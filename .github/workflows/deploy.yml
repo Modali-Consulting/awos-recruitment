@@ -25,7 +25,7 @@ env:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ${{ vars.LINUX_RUNNER || 'beast' }}
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4

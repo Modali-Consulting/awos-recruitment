@@ -23,7 +23,7 @@ jobs:
     if: |
       (github.event.pull_request.merged == true &&
        contains(github.event.pull_request.labels.*.name, 'release'))
-    runs-on: ubuntu-latest
+    runs-on: ${{ vars.LINUX_RUNNER || 'beast' }}
     timeout-minutes: 10
     strategy:
       fail-fast: false
